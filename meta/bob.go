@@ -1,4 +1,4 @@
-package main
+package meta
 
 func bob() (s suite) {
 	expectations := []expectation{

@@ -1,4 +1,4 @@
-package main
+package meta
 
 type expectation struct {
 	Name   string      `json:"name"`

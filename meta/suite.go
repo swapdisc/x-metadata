@@ -1,4 +1,4 @@
-package main
+package meta
 
 import (
 	"encoding/json"
@@ -15,7 +15,7 @@ func (s suite) filename() (f string) {
 	return fmt.Sprintf("exercises/%s.json", s.Name)
 }
 
-func (s suite) export() error {
+func (s suite) Export() error {
 	bytes, err := s.JSON()
 	if err != nil {
 		fmt.Errorf("Could not make json out of expectations in %s, %v", s.Name, err)

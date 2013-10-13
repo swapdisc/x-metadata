@@ -1,7 +1,11 @@
 package main
 
+import (
+	"github.com/exercism/xmetadata/meta"
+)
+
 func main() {
-	bob().export()
-	phrase().export()
-	anagram().export()
+	for _, s := range meta.All() {
+		s.Export()
+	}
 }

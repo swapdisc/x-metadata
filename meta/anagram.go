@@ -1,4 +1,4 @@
-package main
+package meta
 
 type anagramInput struct {
 	Subject    string   `json:"subject"`
