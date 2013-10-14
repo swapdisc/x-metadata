@@ -3,6 +3,28 @@ package meta
 type phraseOutput map[string]int
 
 func phrase() (s suite) {
+	s = suite{
+		Name:         "phrase",
+		Blurb:        "Write a program that given a phrase can count the occurrences of each word in that phrase.",
+		Description:  phraseDescription(),
+		Source:       "The golang tour",
+		SourceUrl:    "http://tour.golang.org",
+		Expectations: phraseExpectations(),
+	}
+	return
+}
+
+func phraseDescription() string {
+	return `For example for the input 'olly olly in come free'
+
+    olly: 2
+    in: 1
+    come: 1
+    free: 1
+`
+}
+
+func phraseExpectations() []expectation {
 	expectations := []expectation{
 		expectation{
 			"count one word",
@@ -50,10 +72,5 @@ func phrase() (s suite) {
 			phraseOutput{"first": 1, "don't": 2, "laugh": 1, "then": 1, "cry": 1},
 		},
 	}
-
-	s = suite{
-		Name:         "phrase",
-		Expectations: expectations,
-	}
-	return
+	return expectations
 }

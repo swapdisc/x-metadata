@@ -4,41 +4,32 @@ import (
 	"testing"
 )
 
-var fakeExpectations = map[string]expectation{
-	"silence": expectation{
-		"really prolonged silence",
-		"Fine. Be that way!",
-		"                 ",
-	},
-	"trick": expectation{
-		"multi line trick question",
-		"Whatever.",
-		"Do I ever change my mind?\nNo.",
-	},
-}
-
-var fakeSuite suite
-
-func init() {
-	fakeSuite = suite{
-		Name: "stuff",
-		Expectations: []expectation{
-			fakeExpectations["silence"],
-			fakeExpectations["trick"],
-		},
-	}
-}
-
 func TestSuiteFilename(t *testing.T) {
-	if fakeSuite.filename() != "exercises/stuff.json" {
-		t.Fatalf("Expected filename to be exercises/thing.json, but it was: %s ", fakeSuite.filename())
+	s := suite{
+		Name: "stuff",
+	}
+	f := s.filename()
+	if f != "exercises/stuff.json" {
+		t.Fatalf("Expected filename to be exercises/stuff.json, but it was: %s ", f)
 	}
 }
 
 func TestSuiteJSON(t *testing.T) {
-	jsonBytes, _ := fakeSuite.JSON()
+	s := suite{
+		Name:        "stuff",
+		Blurb:       "Do stuff with programming.",
+		Description: "Very straight forward string things.",
+		Source:      "The internet.",
+		SourceUrl:   "http://example.com",
+		Expectations: []expectation{
+			expectation{"one thing", "1", 1},
+			expectation{"two things", "2", 2},
+		},
+	}
+
+	jsonBytes, _ := s.JSON()
 	json := string(jsonBytes)
-	expected := `[{"name":"really prolonged silence","input":"Fine. Be that way!","output":"                 "},{"name":"multi line trick question","input":"Whatever.","output":"Do I ever change my mind?\nNo."}]`
+	expected := `{"name":"stuff","blurb":"Do stuff with programming.","description":"Very straight forward string things.","source":"The internet.","source_url":"http://example.com","expectations":[{"name":"one thing","input":"1","output":1},{"name":"two things","input":"2","output":2}]}`
 	if json != expected {
 		t.Fatalf("Expected JSON to not be %s ", json)
 	}

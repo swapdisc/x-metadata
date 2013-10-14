@@ -7,8 +7,12 @@ import (
 )
 
 type suite struct {
-	Name         string
-	Expectations []expectation
+	Name         string        `json:"name"`
+	Blurb        string        `json:"blurb"`
+	Description  string        `json:"description"`
+	Source       string        `json:"source"`
+	SourceUrl    string        `json:"source_url"`
+	Expectations []expectation `json:"expectations"`
 }
 
 func (s suite) filename() (f string) {
@@ -30,6 +34,6 @@ func (s suite) Export() error {
 }
 
 func (s suite) JSON() ([]byte, error) {
-	b, err := json.Marshal(s.Expectations)
+	b, err := json.Marshal(s)
 	return b, err
 }

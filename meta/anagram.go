@@ -6,6 +6,22 @@ type anagramInput struct {
 }
 
 func anagram() (s suite) {
+	s = suite{
+		Name:         "anagram",
+		Blurb:        "Write a program that, given a word and a list of possible anagrams, selects the correct sublist.",
+		Description:  anagramDescription(),
+		Source:       "Inspired by the Extreme Startup game",
+		SourceUrl:    "https://github.com/rchatley/extreme_startup",
+		Expectations: anagramExpectations(),
+	}
+	return
+}
+
+func anagramDescription() string {
+	return "Given the subject 'listen' and a list of candidates such as 'enlists' 'google' 'inlets' 'banana' the program should return a list containing 'inlets'."
+}
+
+func anagramExpectations() []expectation {
 	expectations := []expectation{
 		expectation{
 			"no matches",
@@ -144,10 +160,5 @@ func anagram() (s suite) {
 			[]string{"carthorse"},
 		},
 	}
-
-	s = suite{
-		Name:         "anagram",
-		Expectations: expectations,
-	}
-	return
+	return expectations
 }

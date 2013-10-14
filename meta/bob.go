@@ -1,6 +1,29 @@
 package meta
 
 func bob() (s suite) {
+	s = suite{
+		Name:         "bob",
+		Blurb:        "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",
+		Description:  bobDescription(),
+		Source:       "Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial.",
+		SourceUrl:    "http://pine.fm/LearnToProgram/?Chapter=06",
+		Expectations: bobExpectations(),
+	}
+	return
+}
+
+func bobDescription() string {
+	return `Bob answers 'Sure.' if you ask him a question.
+
+He answers 'Woah, chill out!' if you yell at him (ALL CAPS).
+
+He says 'Fine. Be that way!' if you address him without actually saying anything.
+
+He answers 'Whatever.' to anything else.
+`
+}
+
+func bobExpectations() []expectation {
 	expectations := []expectation{
 		expectation{
 			"stating something",
@@ -93,10 +116,5 @@ func bob() (s suite) {
 			"Do I ever change my mind?\nNo.",
 		},
 	}
-
-	s = suite{
-		Name:         "bob",
-		Expectations: expectations,
-	}
-	return
+	return expectations
 }
