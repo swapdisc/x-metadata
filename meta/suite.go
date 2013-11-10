@@ -16,7 +16,7 @@ type suite struct {
 }
 
 func (s suite) filename() (f string) {
-	return fmt.Sprintf("exercises/%s.json", s.Name)
+	return fmt.Sprintf("json/%s.json", s.Name)
 }
 
 func (s suite) Export() error {

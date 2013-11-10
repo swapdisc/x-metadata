@@ -9,8 +9,8 @@ func TestSuiteFilename(t *testing.T) {
 		Name: "stuff",
 	}
 	f := s.filename()
-	if f != "exercises/stuff.json" {
-		t.Fatalf("Expected filename to be exercises/stuff.json, but it was: %s ", f)
+	if f != "json/stuff.json" {
+		t.Fatalf("Expected filename to be json/stuff.json, but it was: %s ", f)
 	}
 }
 
