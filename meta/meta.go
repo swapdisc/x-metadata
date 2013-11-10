@@ -6,6 +6,7 @@ func All() []suite {
 		phrase(),
 		anagram(),
 		hamming(),
+		raindrops(),
 	}
 	return suites
 }
