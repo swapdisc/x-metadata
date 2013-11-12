@@ -1,12 +1,16 @@
-package meta
+package x
+
+import (
+	. "github.com/exercism/xmetadata/meta"
+)
 
 type hammingInput struct {
 	Strand1 string `json:"strand1"`
 	Strand2 string `json:"strand2"`
 }
 
-func hamming() (s suite) {
-	s = suite{
+func Hamming() (s Suite) {
+	s = Suite{
 		Name:         "hamming",
 		Blurb:        "Write a program that can calculate the Hamming distance between two DNA strands.",
 		Description:  hammingDescription(),
@@ -31,44 +35,44 @@ This is called the 'Hamming distance'
     ^ ^ ^  ^ ^    ^^
 `
 }
-func hammingExpectations() []expectation {
-	expectations := []expectation{
-		expectation{
+func hammingExpectations() []Expectation {
+	expectations := []Expectation{
+		Expectation{
 			Name:   "no difference between empty strands",
 			Input:  hammingInput{"", ""},
 			Output: 0,
 		},
-		expectation{
+		Expectation{
 			Name:   "no difference between identical strands",
 			Input:  hammingInput{"GGACTGA", "GGACTGA"},
 			Output: 0,
 		},
-		expectation{
+		Expectation{
 			Name:   "complete hamming distance in small strand",
 			Input:  hammingInput{"ACT", "GGA"},
 			Output: 3,
 		},
-		expectation{
+		Expectation{
 			Name:   "hamming distance in off by one strand",
 			Input:  hammingInput{"GGACGGATTCTG", "AGGACGGATTCT"},
 			Output: 9,
 		},
-		expectation{
+		Expectation{
 			Name:   "small hamming distance in middle somewhere",
 			Input:  hammingInput{"GGACG", "GGTCG"},
 			Output: 1,
 		},
-		expectation{
+		Expectation{
 			Name:   "larger distance",
 			Input:  hammingInput{"ACCAGGG", "ACTATGG"},
 			Output: 2,
 		},
-		expectation{
+		Expectation{
 			Name:   "ignores extra length on other strand when longer",
 			Input:  hammingInput{"AAACTAGGGG", "AGGCTAGCGGTAGGAC"},
 			Output: 3,
 		},
-		expectation{
+		Expectation{
 			Name:   "ignores extra length on original strand when longer",
 			Input:  hammingInput{"GACTACGGACAGGGTAGGGAAT", "GACATCGCACACC"},
 			Output: 5,

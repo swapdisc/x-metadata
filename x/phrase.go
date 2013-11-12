@@ -1,9 +1,13 @@
-package meta
+package x
+
+import (
+	. "github.com/exercism/xmetadata/meta"
+)
 
 type phraseOutput map[string]int
 
-func phrase() (s suite) {
-	s = suite{
+func Phrase() (s Suite) {
+	s = Suite{
 		Name:         "phrase",
 		Blurb:        "Write a program that given a phrase can count the occurrences of each word in that phrase.",
 		Description:  phraseDescription(),
@@ -24,49 +28,49 @@ func phraseDescription() string {
 `
 }
 
-func phraseExpectations() []expectation {
-	expectations := []expectation{
-		expectation{
+func phraseExpectations() []Expectation {
+	expectations := []Expectation{
+		Expectation{
 			"count one word",
 			"word",
 			phraseOutput{"word": 1},
 		},
-		expectation{
+		Expectation{
 			"count one of each",
 			"one of each",
 			phraseOutput{"one": 1, "of": 1, "each": 1},
 		},
-		expectation{
+		Expectation{
 			"count multiple occurrences",
 			"one fish two fish red fish blue fish",
 			phraseOutput{"one": 1, "fish": 4, "two": 1, "red": 1, "blue": 1},
 		},
-		expectation{
+		Expectation{
 			"count everything just once",
 			"all the kings horses and all the kings men",
 			phraseOutput{"all": 2, "the": 2, "kings": 2, "horses": 1, "and": 1, "men": 1},
 		},
-		expectation{
+		Expectation{
 			"ignore punctuation",
 			"car : carpet as java : javascript!!&@$%^&",
 			phraseOutput{"car": 1, "carpet": 1, "as": 1, "java": 1, "javascript": 1},
 		},
-		expectation{
+		Expectation{
 			"handles cramped lists",
 			"one,two,three",
 			phraseOutput{"one": 1, "two": 1, "three": 1},
 		},
-		expectation{
+		Expectation{
 			"include numbers",
 			"testing, 1, 2 testing",
 			phraseOutput{"testing": 2, "1": 1, "2": 1},
 		},
-		expectation{
+		Expectation{
 			"normalize case",
 			"go Go GO",
 			phraseOutput{"go": 3},
 		},
-		expectation{
+		Expectation{
 			"with apostrophes",
 			"First: don't laugh. Then: don't cry.",
 			phraseOutput{"first": 1, "don't": 2, "laugh": 1, "then": 1, "cry": 1},

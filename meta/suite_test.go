@@ -5,7 +5,7 @@ import (
 )
 
 func TestSuiteFilename(t *testing.T) {
-	s := suite{
+	s := Suite{
 		Name: "stuff",
 	}
 	f := s.filename()
@@ -15,15 +15,15 @@ func TestSuiteFilename(t *testing.T) {
 }
 
 func TestSuiteJSON(t *testing.T) {
-	s := suite{
+	s := Suite{
 		Name:        "stuff",
 		Blurb:       "Do stuff with programming.",
 		Description: "Very straight forward string things.",
 		Source:      "The internet.",
 		SourceUrl:   "http://example.com",
-		Expectations: []expectation{
-			expectation{"one thing", "1", 1},
-			expectation{"two things", "2", 2},
+		Expectations: []Expectation{
+			Expectation{"one thing", "1", 1},
+			Expectation{"two things", "2", 2},
 		},
 	}
 

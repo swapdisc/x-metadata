@@ -1,7 +1,11 @@
-package meta
+package x
 
-func raindrops() (s suite) {
-	s = suite{
+import (
+	. "github.com/exercism/xmetadata/meta"
+)
+
+func Raindrops() (s Suite) {
+	s = Suite{
 		Name:         "raindrops",
 		Blurb:        "Write a program that converts a number to a string, the contents of which depends on the number's prime factors.",
 		Description:  raindropsDescription(),
@@ -36,24 +40,24 @@ so it just goes with the straightforward "34".
 `
 }
 
-func raindropsExpectations() []expectation {
-	expectations := []expectation{
-		expectation{"1", 1, "1"},
-		expectation{"3", 3, "Pling"},
-		expectation{"5", 5, "Plang"},
-		expectation{"7", 7, "Plong"},
-		expectation{"6", 6, "Pling"},
-		expectation{"9", 9, "Pling"},
-		expectation{"10", 10, "Plang"},
-		expectation{"14", 14, "Plong"},
-		expectation{"15", 15, "PlingPlang"},
-		expectation{"21", 21, "PlingPlong"},
-		expectation{"25", 25, "Plang"},
-		expectation{"35", 35, "PlangPlong"},
-		expectation{"49", 49, "Plong"},
-		expectation{"52", 52, "52"},
-		expectation{"105", 105, "PlingPlangPlong"},
-		expectation{"12121", 12121, "12121"},
+func raindropsExpectations() []Expectation {
+	expectations := []Expectation{
+		Expectation{"1", 1, "1"},
+		Expectation{"3", 3, "Pling"},
+		Expectation{"5", 5, "Plang"},
+		Expectation{"7", 7, "Plong"},
+		Expectation{"6", 6, "Pling"},
+		Expectation{"9", 9, "Pling"},
+		Expectation{"10", 10, "Plang"},
+		Expectation{"14", 14, "Plong"},
+		Expectation{"15", 15, "PlingPlang"},
+		Expectation{"21", 21, "PlingPlong"},
+		Expectation{"25", 25, "Plang"},
+		Expectation{"35", 35, "PlangPlong"},
+		Expectation{"49", 49, "Plong"},
+		Expectation{"52", 52, "52"},
+		Expectation{"105", 105, "PlingPlangPlong"},
+		Expectation{"12121", 12121, "12121"},
 	}
 	return expectations
 }

@@ -1,7 +1,11 @@
-package meta
+package x
 
-func bob() (s suite) {
-	s = suite{
+import (
+	. "github.com/exercism/xmetadata/meta"
+)
+
+func Bob() (s Suite) {
+	s = Suite{
 		Name:         "bob",
 		Blurb:        "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",
 		Description:  bobDescription(),
@@ -23,94 +27,94 @@ He answers 'Whatever.' to anything else.
 `
 }
 
-func bobExpectations() []expectation {
-	expectations := []expectation{
-		expectation{
+func bobExpectations() []Expectation {
+	expectations := []Expectation{
+		Expectation{
 			"stating something",
 			"Whatever.",
 			"Tom-ay-to, tom-aaaah-to.",
 		},
-		expectation{
+		Expectation{
 			"shouting",
 			"Woah, chill out!",
 			"WATCH OUT!",
 		},
-		expectation{
+		Expectation{
 			"asking a question",
 			"Sure.",
 			"Does this cryogenic chamber make me look fat?",
 		},
-		expectation{
+		Expectation{
 			"asking a numeric question",
 			"Sure.",
 			"You are, what, like 15?",
 		},
-		expectation{
+		Expectation{
 			"talking forcefully",
 			"Whatever.",
 			"Let's go make out behind the gym!",
 		},
-		expectation{
+		Expectation{
 			"using acronyms in regular speech",
 			"Whatever.",
 			"It's OK if you don't want to go to the DMV.",
 		},
-		expectation{
+		Expectation{
 			"forceful questions",
 			"Woah, chill out!",
 			"WHAT THE HELL WERE YOU THINKING?",
 		},
-		expectation{
+		Expectation{
 			"shouting numbers",
 			"Woah, chill out!",
 			"1, 2, 3 GO!",
 		},
-		expectation{
+		Expectation{
 			"only numbers",
 			"Whatever.",
 			"1, 2, 3",
 		},
-		expectation{
+		Expectation{
 			"question with only numbers",
 			"Sure.",
 			"4?",
 		},
-		expectation{
+		Expectation{
 			"shouting with special characters",
 			"Woah, chill out!",
 			"ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!",
 		},
-		expectation{
+		Expectation{
 			"shouting with no exclamation mark",
 			"Woah, chill out!",
 			"I HATE YOU",
 		},
-		expectation{
+		Expectation{
 			"statement containing question mark",
 			"Whatever.",
 			"Ending with ? means a question.",
 		},
-		expectation{
+		Expectation{
 			"prattling on",
 			"Sure.",
 			"Wait! Hang on. Are you going to be OK?",
 		},
-		expectation{
+		Expectation{
 			"silence",
 			"Fine. Be that way!",
 			"",
 		},
-		expectation{
+		Expectation{
 			"prolonged silence",
 			"Fine. Be that way!",
 			"    ",
 		},
-		expectation{
+		Expectation{
 			"really prolonged silence",
 			"Fine. Be that way!",
 			"                 ",
 		},
-		expectation{
+		Expectation{
 			"multi line trick question",
 			"Whatever.",
 			"Do I ever change my mind?\nNo.",

@@ -1,12 +1,16 @@
-package meta
+package x
+
+import (
+	. "github.com/exercism/xmetadata/meta"
+)
 
 type anagramInput struct {
 	Subject    string   `json:"subject"`
 	Candidates []string `json:"candidates"`
 }
 
-func anagram() (s suite) {
-	s = suite{
+func Anagram() (s Suite) {
+	s = Suite{
 		Name:         "anagram",
 		Blurb:        "Write a program that, given a word and a list of possible anagrams, selects the correct sublist.",
 		Description:  anagramDescription(),
@@ -21,9 +25,9 @@ func anagramDescription() string {
 	return "Given the subject 'listen' and a list of candidates such as 'enlists' 'google' 'inlets' 'banana' the program should return a list containing 'inlets'."
 }
 
-func anagramExpectations() []expectation {
-	expectations := []expectation{
-		expectation{
+func anagramExpectations() []Expectation {
+	expectations := []Expectation{
+		Expectation{
 			"no matches",
 			anagramInput{
 				Subject: "diaper",
@@ -36,7 +40,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{},
 		},
-		expectation{
+		Expectation{
 			"detect simple anagram",
 			anagramInput{
 				Subject: "ant",
@@ -48,7 +52,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{"tan"},
 		},
-		expectation{
+		Expectation{
 			"detect another simple anagram",
 			anagramInput{
 				Subject: "listen",
@@ -61,7 +65,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{"inlets"},
 		},
-		expectation{
+		Expectation{
 			"detect multiple anagrams",
 			anagramInput{
 				Subject: "master",
@@ -73,7 +77,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{"maters", "stream"},
 		},
-		expectation{
+		Expectation{
 			"detect multiple anagrams again",
 			anagramInput{
 				Subject: "allergy",
@@ -88,7 +92,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{"gallery", "largely", "regally"},
 		},
-		expectation{
+		Expectation{
 			"does not confuse different duplicates",
 			anagramInput{
 				Subject: "galea",
@@ -98,7 +102,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{},
 		},
-		expectation{
+		Expectation{
 			"identical word is not anagram",
 			anagramInput{
 				Subject: "corn",
@@ -114,7 +118,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{},
 		},
-		expectation{
+		Expectation{
 			"eliminate anagrams with same checksum",
 			anagramInput{
 				Subject: "mass",
@@ -124,7 +128,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{},
 		},
-		expectation{
+		Expectation{
 			"eliminate anagram subsets",
 			anagramInput{
 				Subject: "good",
@@ -135,7 +139,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{},
 		},
-		expectation{
+		Expectation{
 			"subjects are case insensitive",
 			anagramInput{
 				Subject: "Orchestra",
@@ -147,7 +151,7 @@ func anagramExpectations() []expectation {
 			},
 			[]string{"carthorse"},
 		},
-		expectation{
+		Expectation{
 			"candidates are case insensitive",
 			anagramInput{
 				Subject: "orchestra",
