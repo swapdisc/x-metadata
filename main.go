@@ -8,6 +8,7 @@ import (
 func main() {
 	for _, s := range all() {
 		s.Export()
+		s.WriteReadme()
 	}
 }
 
