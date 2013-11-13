@@ -1,0 +1,1 @@
+{"name":"word-count","blurb":"Write a program that given a phrase can count the occurrences of each word in that phrase.","description":"For example for the input `\"olly olly in come free\"`\n\n```plain\nolly: 2\nin: 1\ncome: 1\nfree: 1\n```\n\n","source":"The golang tour","source_url":"http://tour.golang.org","expectations":[]}
