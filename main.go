@@ -51,6 +51,7 @@ func all() []meta.Suite {
 		x.PigLatin(),
 		x.PointMutations(),
 		x.PrimeFactors(),
+		x.Proverb(),
 		x.PythagoreanTriplet(),
 		x.QueenAttack(),
 		x.Raindrops(),
