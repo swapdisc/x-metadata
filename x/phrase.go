@@ -30,47 +30,47 @@ func phraseDescription() string {
 
 func phraseExpectations() []Expectation {
 	expectations := []Expectation{
-		Expectation{
+		{
 			"count one word",
 			"word",
 			phraseOutput{"word": 1},
 		},
-		Expectation{
+		{
 			"count one of each",
 			"one of each",
 			phraseOutput{"one": 1, "of": 1, "each": 1},
 		},
-		Expectation{
+		{
 			"count multiple occurrences",
 			"one fish two fish red fish blue fish",
 			phraseOutput{"one": 1, "fish": 4, "two": 1, "red": 1, "blue": 1},
 		},
-		Expectation{
+		{
 			"count everything just once",
 			"all the kings horses and all the kings men",
 			phraseOutput{"all": 2, "the": 2, "kings": 2, "horses": 1, "and": 1, "men": 1},
 		},
-		Expectation{
+		{
 			"ignore punctuation",
 			"car : carpet as java : javascript!!&@$%^&",
 			phraseOutput{"car": 1, "carpet": 1, "as": 1, "java": 1, "javascript": 1},
 		},
-		Expectation{
+		{
 			"handles cramped lists",
 			"one,two,three",
 			phraseOutput{"one": 1, "two": 1, "three": 1},
 		},
-		Expectation{
+		{
 			"include numbers",
 			"testing, 1, 2 testing",
 			phraseOutput{"testing": 2, "1": 1, "2": 1},
 		},
-		Expectation{
+		{
 			"normalize case",
 			"go Go GO",
 			phraseOutput{"go": 3},
 		},
-		Expectation{
+		{
 			"with apostrophes",
 			"First: don't laugh. Then: don't cry.",
 			phraseOutput{"first": 1, "don't": 2, "laugh": 1, "then": 1, "cry": 1},

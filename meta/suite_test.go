@@ -32,8 +32,8 @@ func TestSuiteJSON(t *testing.T) {
 		Source:      "The internet.",
 		SourceUrl:   "http://example.com",
 		Expectations: []Expectation{
-			Expectation{"one thing", "1", 1},
-			Expectation{"two things", "2", 2},
+			{"one thing", "1", 1},
+			{"two things", "2", 2},
 		},
 	}
 

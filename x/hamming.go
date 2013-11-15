@@ -37,42 +37,42 @@ This is called the 'Hamming distance'
 }
 func hammingExpectations() []Expectation {
 	expectations := []Expectation{
-		Expectation{
+		{
 			Name:   "no difference between empty strands",
 			Input:  hammingInput{"", ""},
 			Output: 0,
 		},
-		Expectation{
+		{
 			Name:   "no difference between identical strands",
 			Input:  hammingInput{"GGACTGA", "GGACTGA"},
 			Output: 0,
 		},
-		Expectation{
+		{
 			Name:   "complete hamming distance in small strand",
 			Input:  hammingInput{"ACT", "GGA"},
 			Output: 3,
 		},
-		Expectation{
+		{
 			Name:   "hamming distance in off by one strand",
 			Input:  hammingInput{"GGACGGATTCTG", "AGGACGGATTCT"},
 			Output: 9,
 		},
-		Expectation{
+		{
 			Name:   "small hamming distance in middle somewhere",
 			Input:  hammingInput{"GGACG", "GGTCG"},
 			Output: 1,
 		},
-		Expectation{
+		{
 			Name:   "larger distance",
 			Input:  hammingInput{"ACCAGGG", "ACTATGG"},
 			Output: 2,
 		},
-		Expectation{
+		{
 			Name:   "ignores extra length on other strand when longer",
 			Input:  hammingInput{"AAACTAGGGG", "AGGCTAGCGGTAGGAC"},
 			Output: 3,
 		},
-		Expectation{
+		{
 			Name:   "ignores extra length on original strand when longer",
 			Input:  hammingInput{"GACTACGGACAGGGTAGGGAAT", "GACATCGCACACC"},
 			Output: 5,

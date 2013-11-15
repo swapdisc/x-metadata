@@ -27,7 +27,7 @@ func anagramDescription() string {
 
 func anagramExpectations() []Expectation {
 	expectations := []Expectation{
-		Expectation{
+		{
 			"no matches",
 			anagramInput{
 				Subject: "diaper",
@@ -40,7 +40,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{},
 		},
-		Expectation{
+		{
 			"detect simple anagram",
 			anagramInput{
 				Subject: "ant",
@@ -52,7 +52,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{"tan"},
 		},
-		Expectation{
+		{
 			"detect another simple anagram",
 			anagramInput{
 				Subject: "listen",
@@ -65,7 +65,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{"inlets"},
 		},
-		Expectation{
+		{
 			"detect multiple anagrams",
 			anagramInput{
 				Subject: "master",
@@ -77,7 +77,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{"maters", "stream"},
 		},
-		Expectation{
+		{
 			"detect multiple anagrams again",
 			anagramInput{
 				Subject: "allergy",
@@ -92,7 +92,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{"gallery", "largely", "regally"},
 		},
-		Expectation{
+		{
 			"does not confuse different duplicates",
 			anagramInput{
 				Subject: "galea",
@@ -102,7 +102,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{},
 		},
-		Expectation{
+		{
 			"identical word is not anagram",
 			anagramInput{
 				Subject: "corn",
@@ -118,7 +118,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{},
 		},
-		Expectation{
+		{
 			"eliminate anagrams with same checksum",
 			anagramInput{
 				Subject: "mass",
@@ -128,7 +128,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{},
 		},
-		Expectation{
+		{
 			"eliminate anagram subsets",
 			anagramInput{
 				Subject: "good",
@@ -139,7 +139,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{},
 		},
-		Expectation{
+		{
 			"subjects are case insensitive",
 			anagramInput{
 				Subject: "Orchestra",
@@ -151,7 +151,7 @@ func anagramExpectations() []Expectation {
 			},
 			[]string{"carthorse"},
 		},
-		Expectation{
+		{
 			"candidates are case insensitive",
 			anagramInput{
 				Subject: "orchestra",

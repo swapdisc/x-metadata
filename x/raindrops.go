@@ -42,22 +42,22 @@ so it just goes with the straightforward "34".
 
 func raindropsExpectations() []Expectation {
 	expectations := []Expectation{
-		Expectation{"1", 1, "1"},
-		Expectation{"3", 3, "Pling"},
-		Expectation{"5", 5, "Plang"},
-		Expectation{"7", 7, "Plong"},
-		Expectation{"6", 6, "Pling"},
-		Expectation{"9", 9, "Pling"},
-		Expectation{"10", 10, "Plang"},
-		Expectation{"14", 14, "Plong"},
-		Expectation{"15", 15, "PlingPlang"},
-		Expectation{"21", 21, "PlingPlong"},
-		Expectation{"25", 25, "Plang"},
-		Expectation{"35", 35, "PlangPlong"},
-		Expectation{"49", 49, "Plong"},
-		Expectation{"52", 52, "52"},
-		Expectation{"105", 105, "PlingPlangPlong"},
-		Expectation{"12121", 12121, "12121"},
+		{"1", 1, "1"},
+		{"3", 3, "Pling"},
+		{"5", 5, "Plang"},
+		{"7", 7, "Plong"},
+		{"6", 6, "Pling"},
+		{"9", 9, "Pling"},
+		{"10", 10, "Plang"},
+		{"14", 14, "Plong"},
+		{"15", 15, "PlingPlang"},
+		{"21", 21, "PlingPlong"},
+		{"25", 25, "Plang"},
+		{"35", 35, "PlangPlong"},
+		{"49", 49, "Plong"},
+		{"52", 52, "52"},
+		{"105", 105, "PlingPlangPlong"},
+		{"12121", 12121, "12121"},
 	}
 	return expectations
 }
