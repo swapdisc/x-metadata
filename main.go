@@ -32,6 +32,7 @@ func all() []meta.Suite {
 		x.Grains(),
 		x.Hamming(),
 		x.Hexadecimal(),
+		x.House(),
 		x.KindergartenGarden(),
 		x.LargestSeriesProduct(),
 		x.Leap(),
