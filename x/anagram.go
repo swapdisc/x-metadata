@@ -116,7 +116,7 @@ func anagramExpectations() []Expectation {
 					"park",
 				},
 			},
-			[]string{},
+			[]string{"cron"},
 		},
 		{
 			"eliminate anagrams with same checksum",
