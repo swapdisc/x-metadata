@@ -35,6 +35,7 @@ This is called the 'Hamming distance'
     ^ ^ ^  ^ ^    ^^
 `
 }
+
 func hammingExpectations() []Expectation {
 	expectations := []Expectation{
 		{
@@ -43,39 +44,50 @@ func hammingExpectations() []Expectation {
 			Output: 0,
 		},
 		{
+			Name:   "complete hamming distance for small strand",
+			Input:  hammingInput{"AG", "CT"},
+			Output: 2,
+		},
+		{
 			Name:   "no difference between identical strands",
-			Input:  hammingInput{"GGACTGA", "GGACTGA"},
+			Input:  hammingInput{"A", "A"},
 			Output: 0,
 		},
 		{
-			Name:   "complete hamming distance in small strand",
-			Input:  hammingInput{"ACT", "GGA"},
-			Output: 3,
+			Name:   "complete distance for single nucleotide strand",
+			Input:  hammingInput{"A", "G"},
+			Output: 1,
 		},
 		{
-			Name:   "hamming distance in off by one strand",
-			Input:  hammingInput{"GGACGGATTCTG", "AGGACGGATTCT"},
-			Output: 9,
+			Name:   "small hamming distance",
+			Input:  hammingInput{"AT", "CT"},
+			Output: 1,
 		},
+
 		{
-			Name:   "small hamming distance in middle somewhere",
+			Name:   "small hamming distance in longer strand",
 			Input:  hammingInput{"GGACG", "GGTCG"},
 			Output: 1,
 		},
 		{
-			Name:   "larger distance",
-			Input:  hammingInput{"ACCAGGG", "ACTATGG"},
-			Output: 2,
+			Name:   "ignores extra length on first strand when longer",
+			Input:  hammingInput{"AAAG", "AAA"},
+			Output: 0,
 		},
 		{
 			Name:   "ignores extra length on other strand when longer",
-			Input:  hammingInput{"AAACTAGGGG", "AGGCTAGCGGTAGGAC"},
-			Output: 3,
+			Input:  hammingInput{"AAA", "AAAG"},
+			Output: 0,
 		},
 		{
-			Name:   "ignores extra length on original strand when longer",
-			Input:  hammingInput{"GACTACGGACAGGGTAGGGAAT", "GACATCGCACACC"},
-			Output: 5,
+			Name:   "large hamming distance",
+			Input:  hammingInput{"GATACA", "GCATAA"},
+			Output: 4,
+		},
+		{
+			Name:   "hamming distance in very long strand",
+			Input:  hammingInput{"GGACGGATTCTG", "AGGACGGATTCT"},
+			Output: 9,
 		},
 	}
 	return expectations
